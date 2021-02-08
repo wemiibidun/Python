@@ -1,4 +1,78 @@
-daily_sales = \
+# Start coding below!
+daily_sales_replaced = daily_sales.replace(";,;","|")
+# split data into records --> list of strs
+daily_transactions = daily_sales_replaced.split(",")
+print(daily_transactions[0])
+#print (len(daily_transactions))
+
+# break each records into a list of fields and store all in a list
+daily_transactions_split = []
+for transaction in daily_transactions:
+  daily_transactions_split.append(transaction.split("|"))
+#print(daily_transactions_split)
+
+# clean up fields in transaction records 
+transactions_clean = []
+for transaction in daily_transactions_split:
+  clean_transaction = []
+  for field in transaction:
+    temp_field = field.replace("\n","")
+    clean_field = temp_field.strip(" ")
+    clean_transaction.append(clean_field)
+  transactions_clean.append(clean_transaction)
+#print(transactions_clean)
+
+# collect transaction records fields into field lists
+customers = []
+sales = []
+thread_sold = []
+
+for transaction in transactions_clean:
+  customers.append(transaction[0])
+  sales.append(transaction[1])
+  thread_sold.append(transaction[2])
+#print(customers, sales, thread_sold)
+
+
+total_sales = 0
+for sale in sales:
+  sale = float(sale.strip("$"))
+  total_sales = total_sales + sale
+print(total_sales)
+
+# expand all thread colors 
+#print(thread_sold)
+
+thread_sold_split = []
+for tcolors in thread_sold: 
+  if "&" in tcolors:
+    cols = tcolors.split("&")
+    for col in cols:
+      thread_sold_split.append(col)
+  else: 
+     thread_sold_split.append(tcolors)
+
+# find number of thread sales containing a given color
+def color_count(color):
+  count = 0
+  for col in thread_sold_split:
+    if color == col: 
+      count += 1
+  return count
+  
+# test with one color
+print(color_count("white"))
+
+# test with multiple colors
+colors = ['red','yellow','green','white','black','blue','purple']
+
+for color in colors:
+  stmt = "Thread Shed sold {0} threads of {1} thread today."
+  total_count = color_count(color)
+  print(stmt.format(total_count, color))
+  
+#------------------------------------------------  
+  daily_sales = \
 """Edith Mcbride   ;,;$1.21   ;,;   white ;,; 
 09/15/17   ,Herbert Tran   ;,;   $7.29;,; 
 white&blue;,;   09/15/17 ,Paul Clarke ;,;$12.52 
@@ -105,76 +179,3 @@ green&white;,;09/15/17,   Gail Phelps   ;,;$30.52
 ;,; green&white&blue   ;,; 09/15/17 , Myrtle Morris 
 ;,;   $22.66   ;,; green&white&blue;,;09/15/17"""
 
-#------------------------------------------------
-# Start coding below!
-daily_sales_replaced = daily_sales.replace(";,;","|")
-# split data into records --> list of strs
-daily_transactions = daily_sales_replaced.split(",")
-print(daily_transactions[0])
-#print (len(daily_transactions))
-
-# break each records into a list of fields and store all in a list
-daily_transactions_split = []
-for transaction in daily_transactions:
-  daily_transactions_split.append(transaction.split("|"))
-#print(daily_transactions_split)
-
-# clean up fields in transaction records 
-transactions_clean = []
-for transaction in daily_transactions_split:
-  clean_transaction = []
-  for field in transaction:
-    temp_field = field.replace("\n","")
-    clean_field = temp_field.strip(" ")
-    clean_transaction.append(clean_field)
-  transactions_clean.append(clean_transaction)
-#print(transactions_clean)
-
-# collect transaction records fields into field lists
-customers = []
-sales = []
-thread_sold = []
-
-for transaction in transactions_clean:
-  customers.append(transaction[0])
-  sales.append(transaction[1])
-  thread_sold.append(transaction[2])
-#print(customers, sales, thread_sold)
-
-
-total_sales = 0
-for sale in sales:
-  sale = float(sale.strip("$"))
-  total_sales = total_sales + sale
-print(total_sales)
-
-# expand all thread colors 
-#print(thread_sold)
-
-thread_sold_split = []
-for tcolors in thread_sold: 
-  if "&" in tcolors:
-    cols = tcolors.split("&")
-    for col in cols:
-      thread_sold_split.append(col)
-  else: 
-     thread_sold_split.append(tcolors)
-
-# find number of thread sales containing a given color
-def color_count(color):
-  count = 0
-  for col in thread_sold_split:
-    if color == col: 
-      count += 1
-  return count
-  
-# test with one color
-print(color_count("white"))
-
-# test with multiple colors
-colors = ['red','yellow','green','white','black','blue','purple']
-
-for color in colors:
-  stmt = "Thread Shed sold {0} threads of {1} thread today."
-  total_count = color_count(color)
-  print(stmt.format(total_count, color))
