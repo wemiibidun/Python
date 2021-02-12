@@ -6,7 +6,7 @@ e.g. If a tall person and a short person both weigh the same amount, the short p
 
 The BMI is calculated by dividing a person's weight (in kg) by the square of their height (in m)
 
-Output Sample Link: https://cdn.fs.teachablecdn.com/jKHjnLrNQjqzdz3MTMyv
+When you hit run, this is what should happen 👉 https://cdn.fs.teachablecdn.com/jKHjnLrNQjqzdz3MTMyv
 '''
 
 # 🚨 Don't change the code below 👇
