@@ -7,6 +7,8 @@ You have x days, y weeks, and z months left.
 
 Where x, y and z are replaced with the actual calculated numbers. 
 
+When you hit run, this is what should happen 👉 https://cdn.fs.teachablecdn.com/RjqBViZQpyVTv7XY6cfA
+
 '''
 
 # 🚨 Don't change the code below 👇
