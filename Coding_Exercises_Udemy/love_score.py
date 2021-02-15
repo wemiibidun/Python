@@ -63,6 +63,8 @@ name2 = "Kim Kardashian"
 ```
 Your score is 42, you are alright together.
 ```
+When you hit run, this is what should happen 👉 https://cdn.fs.teachablecdn.com/nfSILIPSNaIOwWhPR5vr
+
 '''
 
 # 🚨 Don't change the code below 👇
