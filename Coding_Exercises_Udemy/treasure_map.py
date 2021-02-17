@@ -61,7 +61,7 @@ col = int(position[0]) - 1
 row = int(position[1]) - 1
 
 
-map[col][row] = "X"
+map[row][col] = "X"
 
 
 #Write your code above this row 👆
