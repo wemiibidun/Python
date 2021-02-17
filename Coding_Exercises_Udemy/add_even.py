@@ -4,6 +4,11 @@ Thus, the first even number would be 2 and the last one is 100:
 '''
 #Write your code below this row 👇
 
+#total = 0
+#for number in range(2,101,2):
+   #total = total + number
+#print(total) 
+
 total = 0
 for number in range(1,101):
   if number % 2 == 0:
