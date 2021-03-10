@@ -132,21 +132,24 @@ class Menu:
 
 
 brunch_items = {
-  'pancakes': 7.50, 'waffles': 9.00, 'burger': 11.00, 'home fries': 4.50, 'coffee': 1.50, 'espresso': 3.00, 'tea': 1.00, 'mimosa': 10.50, 'orange juice': 3.50
+  'pancakes': 7.50, 'waffles': 9.00, 'burger': 11.00, 'home fries': 4.50, 'coffee': 1.50, 'espresso': 3.00, 'tea': 1.00, 
+  'mimosa': 10.50, 'orange juice': 3.50
 }
 
 brunch = Menu('brunch', brunch_items, 1100, 1600)
 #print(brunch.name)  
 
 early_bird_items = {
-  'salumeria plate': 8.00, 'salad and breadsticks (serves 2, no refills)': 14.00, 'pizza with quattro formaggi': 9.00, 'duck ragu': 17.50, 'mushroom ravioli (vegan)': 13.50, 'coffee': 1.50, 'espresso': 3.00,
+  'salumeria plate': 8.00, 'salad and breadsticks (serves 2, no refills)': 14.00, 'pizza with quattro formaggi': 9.00, 
+  'duck ragu': 17.50, 'mushroom ravioli (vegan)': 13.50, 'coffee': 1.50, 'espresso': 3.00,
 }
 
 early_bird = Menu('early_bird', early_bird_items, 1500, 1800)
 #print(early_bird_menu.name)     
 
 dinner_items = {
-  'crostini with eggplant caponata': 13.00, 'ceaser salad': 16.00, 'pizza with quattro formaggi': 11.00, 'duck ragu': 19.50, 'mushroom ravioli (vegan)': 13.50, 'coffee': 2.00, 'espresso': 3.00,
+  'crostini with eggplant caponata': 13.00, 'ceaser salad': 16.00, 'pizza with quattro formaggi': 11.00, 'duck ragu': 19.50, 
+  'mushroom ravioli (vegan)': 13.50, 'coffee': 2.00, 'espresso': 3.00,
 }
 
 dinner = Menu('dinner', dinner_items, 1700, 2300)
